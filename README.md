@@ -62,7 +62,7 @@ stateDiagram-v2
 1. Install CircuitPython for the T-Display-S3 with the web installer on [circuitpython.org](https://circuitpython.org/board/lilygo_tdisplay_s3/). If the board isn't found: hold **BOOT**, press **RST**, release **BOOT**.
 2. The board shows up as a USB drive called **CIRCUITPY**.
 3. Copy `code.py` from this repo onto CIRCUITPY. The board restarts and runs it right away. The file on the board must be called `code.py`.
-4. Libraries (from the [CircuitPython bundle](https://circuitpython.org/libraries), version 9.x) go into the `lib` folder on CIRCUITPY. Stage 1 needs `adafruit_display_text`.
+4. Libraries (from the [CircuitPython bundle](https://circuitpython.org/libraries), version 9.x) go into the `lib` folder on CIRCUITPY. The code needs `adafruit_display_text` and `adafruit_miniqr`.
 
 I write the code in VS Code (with `pip install circuitpython-stubs` for autocomplete) and read error messages in the [Thonny](https://thonny.org) shell.
 
