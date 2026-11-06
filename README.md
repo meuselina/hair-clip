@@ -6,6 +6,12 @@ I'm building this to learn embedded programming from scratch: I write the code m
 
 > **Status:** work in progress. The display is running, the screens are being built step by step.
 
+## Demo
+
+The LinkedIn screen: scrolling text on a pink background and a QR code that links to my LinkedIn profile.
+
+https://github.com/user-attachments/assets/a8d31f38-1431-45d5-bde1-ea1b3ae140aa
+
 ## Hardware
 
 | Part | Notes |
@@ -49,7 +55,7 @@ stateDiagram-v2
 - [x] Flash CircuitPython onto the board, first output on the display
 - [x] Draw on the display with `displayio` (Bitmap, Palette, TileGrid, Group): pink full-screen background
 - [x] **Stage 1:** scrolling text on a coloured background ("My Linkedin: selinameusel")
-- [ ] **Stage 2:** QR code next to the text
+- [x] **Stage 2:** QR code next to the text (scannable, generated on the board with `adafruit_miniqr`)
 - [ ] **Stage 3:** read the two buttons (with debouncing)
 - [ ] **Stage 4:** switch between screens (state machine)
 - [ ] **Stage 5:** toggle "Don't talk to me" / "Free to talk"
