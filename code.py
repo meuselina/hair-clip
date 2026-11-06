@@ -4,6 +4,8 @@ import supervisor
 import time
 import board
 import displayio
+import adafruit_miniqr
+
 
 display=board.DISPLAY
 board.DISPLAY.width
@@ -31,8 +33,33 @@ text = label.Label(
 
 gruppe.append(text)
 text.x= 320
-text.y= display.height//2
-textbreite = text.bounding_box[2] * text.scale      # Breite des Textes in Pixeln
+textbreite = text.bounding_box[2] * text.scale
+text.y = display.height // 2# Breite des Textes in Pixeln
+
+qr = adafruit_miniqr.QRCode()
+qr.add_data(b"https://www.linkedin.com/in/selinameusel")
+qr.make()
+matrix = qr.matrix          # das Raster: matrix[x, y] ist True (schwarz) oder False (weiß)
+# 2. Bitmap mit Rand bauen
+rand = 4                                  # weißer Rand in Modulen, sonst scannt das Handy schlecht
+groesse = matrix.width + 2 * rand
+qr_bitmap = displayio.Bitmap(groesse, groesse, 2)
+
+qr_palette = displayio.Palette(2)
+qr_palette[0] = 0xFFC0CB                  # Farbe 0 = rosa
+qr_palette[1] = 0x6F3250 # Farbe 1 = Textfarbe Beere
+
+qr_tile = displayio.TileGrid(qr_bitmap, pixel_shader=qr_palette)
+qr_gruppe = displayio.Group(scale=4, x=172, y=11)
+qr_gruppe.append(qr_tile)
+gruppe.append(qr_gruppe)
+
+# 3. Raster übertragen
+for y in range(matrix.height):
+    for x in range(matrix.width):
+        if matrix[x, y]:
+            qr_bitmap[x + rand, y +rand] = 1
+
 while True:
     text.y = 85
     text.x = text.x - 1      # wie viele Pixel pro Frame
