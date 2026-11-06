@@ -48,7 +48,7 @@ stateDiagram-v2
 
 - [x] Flash CircuitPython onto the board, first output on the display
 - [x] Draw on the display with `displayio` (Bitmap, Palette, TileGrid, Group): pink full-screen background
-- [ ] **Stage 1:** text on a coloured background ("LinkedIn: selinameusel")
+- [x] **Stage 1:** scrolling text on a coloured background ("My Linkedin: selinameusel")
 - [ ] **Stage 2:** QR code next to the text
 - [ ] **Stage 3:** read the two buttons (with debouncing)
 - [ ] **Stage 4:** switch between screens (state machine)
