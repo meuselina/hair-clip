@@ -21,6 +21,8 @@ https://github.com/user-attachments/assets/a8d31f38-1431-45d5-bde1-ea1b3ae140aa
 | 3D-printed case | Planned: replaces an acrylic back plate, holds the clip, the board and the battery |
 | Metal clip blank, pearls, flowers | Decoration on the front rim of the case |
 
+Full parts list with status and battery notes: [docs/parts.md](docs/parts.md)
+
 ## How the clip behaves
 
 The clip is a small **state machine**: it is always on exactly one screen, and each button press moves it to another one. The animation is the "home" screen.
@@ -62,6 +64,8 @@ stateDiagram-v2
 - [ ] **Stage 6:** looping animation (GIF or sprite sheet, non-blocking timing)
 - [ ] **Stage 7:** battery mode (GPIO15 for the display, power saving, battery level)
 - [ ] Design and print the case, assemble and decorate the clip
+
+What happened at each stage (and what broke): [docs/devlog.md](docs/devlog.md)
 
 ## Running it
 

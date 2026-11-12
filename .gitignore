@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+._*
+
+# Files the CIRCUITPY drive creates on its own
+.fseventsd/
+.Trashes
+.metadata_never_index
+boot_out.txt
+
+# Python / editor
+__pycache__/
+*.pyc
+.venv/
+.vscode/
+
+# 3D printing exports (sliced files are machine-specific)
+*.gcode
+*.3mf.bak
